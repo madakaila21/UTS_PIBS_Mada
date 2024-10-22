@@ -1,0 +1,326 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+header, nav, section, aside, footer {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Layout untuk Mobile */
+header, nav, section, aside, footer {
+    width: 100%;
+    padding: 1rem;
+}
+
+header {
+    background-color: violet;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center; /* Menyelaraskan elemen secara vertikal */
+    justify-content: flex-start; /* Menyelaraskan konten ke kiri */
+}
+
+.image-display {
+    margin-right: 1rem; /* Jarak antara gambar dan judul */
+}
+
+.image-display img {
+    width: 50px; /* Ukuran gambar */
+    height: 50px; /* Tinggi gambar */
+    border-radius: 50%; /* Membuat gambar bulat */
+}
+
+.wadah {
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    text-align: left;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Vertikal untuk mobile */
+    align-items: left;
+}
+
+nav ul li {
+    margin: 5px 0;
+}
+
+section, aside {
+    margin-bottom: 10px;
+}
+
+aside {
+    padding: 1rem;
+    max-height: 30vh;
+    overflow: auto;
+}
+
+aside h2 {
+    text-align: left;
+    margin: 0;
+}
+
+aside ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* Vertikal untuk mobile */
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    background-color: #f1f1f1;
+}
+
+/* Layout untuk Tablet Lanskap */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+        display: grid;
+        grid-template-columns: 25% 75%; /* 25% untuk nav dan 75% untuk section */
+        grid-template-rows: auto auto auto; /* Mengatur baris untuk header, aside, dan footer */
+        grid-template-areas:
+            "header header"
+            "nav section"
+            "aside aside"
+            "footer footer";
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        grid-area: header;
+        width: 100%;
+        background-color: magenta;
+        text-align: center;
+        max-width: none; /* Pastikan tidak ada batasan lebar */
+    }
+    
+    .header-content {
+        display: flex;
+        align-items: center; /* Menyelaraskan elemen secara vertikal */
+        justify-content: flex-start; /* Menyelaraskan konten ke kiri */
+    }
+    
+    .image-display {
+        margin-right: 1rem; /* Jarak antara gambar dan judul */
+    }
+    
+    .image-display img {
+        width: 50px; /* Ukuran gambar */
+        height: 50px; /* Tinggi gambar */
+        border-radius: 50%; /* Membuat gambar bulat */
+    }
+
+    nav {
+        grid-area: nav; /* Menentukan area grid untuk nav */
+        display: flex;
+        flex-direction: column; /* Tetap vertikal untuk item di dalam nav */
+        padding: 1rem; /* Sesuaikan padding */
+    }
+
+    section {
+        grid-area: section; /* Menentukan area grid untuk section */
+        padding: 2rem; /* Sesuaikan padding */
+    }
+
+    aside {
+        grid-area: aside; /* Menentukan area grid untuk aside */
+        padding: 1rem; /* Sesuaikan padding */
+        max-height: none; /* Hapus max-height untuk lebih fleksibel */
+    }
+
+    footer {
+        grid-area: footer; /* Menentukan area grid untuk footer */
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 1rem;
+        background-color: #f1f1f1;
+    }
+
+    nav ul, aside ul {
+        flex-direction: column; /* Tetap vertikal untuk nav dan aside */
+    }
+}
+
+/* Layout untuk Tablet Potret */
+@media (min-width: 600px) and (max-width: 767px) {
+    body {
+        font-size: 16px;
+        display: grid;
+        grid-template-columns: 1fr; /* Satu kolom penuh untuk tampilan potret */
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "header"
+            "nav"
+            "section"
+            "footer"; /* Memastikan aside berada di bawah */
+    }
+
+    header {
+        background-color: palevioletred;
+        text-align: center;
+    }
+    
+    .header-content {
+        display: flex;
+        align-items: center; /* Menyelaraskan elemen secara vertikal */
+        justify-content: flex-start; /* Menyelaraskan konten ke kiri */
+    }
+    
+    .image-display {
+        margin-right: 1rem; /* Jarak antara gambar dan judul */
+    }
+    
+    .image-display img {
+        width: 50px; /* Ukuran gambar */
+        height: 50px; /* Tinggi gambar */
+        border-radius: 50%; /* Membuat gambar bulat */
+    }
+
+    nav {
+        display: flex; /* Mengubah ke flexbox untuk menata item */
+        flex-direction: row; /* Horizontal */
+        justify-content: space-between; /* Memberikan jarak antara elemen */
+        padding: 1rem; /* Sesuaikan padding */
+        margin: 1rem 0; /* Tambahkan margin atas dan bawah untuk spasi */
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row; /* Horizontal untuk item nav */
+        list-style: none; /* Menghilangkan bullet points */
+        padding: 0;
+        margin: 0;
+        gap: 1rem; /* Menambahkan jarak antar item */
+    }
+
+    section {
+        padding: 1rem; /* Sesuaikan padding */
+    }
+
+    aside {
+        display: flex;
+        flex-direction: row; /* Menyusun item aside secara horizontal */
+        padding: 1rem; /* Sesuaikan padding */
+        margin: 1rem 0; /* Tambahkan margin untuk spasi */
+    }
+
+    aside ul {
+        list-style: none; /* Menghilangkan bullet points */
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row; /* Horizontal untuk item aside */
+        gap: 1rem; /* Menambahkan jarak antar item */
+    }
+
+    aside h2 {
+        text-align: left;
+        margin: 0;
+        padding-right: 1rem; /* Tambahkan sedikit ruang antara judul dan item */
+    }
+}
+
+
+/* Layout untuk Desktop */
+@media (min-width: 1025px) {
+    body {
+        font-size: 16px;
+        display: grid;
+        grid-template-columns: 25% 50% 25%; /* Kolom untuk desktop */
+        grid-template-rows: auto 1fr auto; /* Baris dengan flex untuk mengisi ruang */
+        grid-template-areas:
+            "header header header"
+            "nav section aside"
+            "footer footer footer"; /* Footer di bawah konten */
+            width: 100vw;
+            margin: 0;
+            height: 100vh;
+    }
+
+    header {
+        grid-area: header;
+        width: 100%;
+        background-color: pink;
+        text-align: center;
+        max-width: none; /* Pastikan tidak ada batasan lebar */
+    }
+    
+    .header-content {
+        display: flex;
+        align-items: center; /* Menyelaraskan elemen secara vertikal */
+        justify-content: flex-start; /* Menyelaraskan konten ke kiri */
+    }
+    
+    .image-display {
+        margin-right: 1rem; /* Jarak antara gambar dan judul */
+    }
+    
+    .image-display img {
+        width: 50px; /* Ukuran gambar */
+        height: 50px; /* Tinggi gambar */
+        border-radius: 50%; /* Membuat gambar bulat */
+    }
+
+    nav {
+        grid-area: nav; /* Nav mengambil area nav */
+        display: flex;
+        flex-direction: column; /* Vertikal untuk nav */
+        padding: 1rem; /* Sesuaikan padding */
+    }
+
+    section {
+        grid-area: section; /* Section mengambil area section */
+        padding: 2rem; /* Sesuaikan padding */
+    }
+
+    aside {
+        grid-area: aside; /* Aside mengambil area aside */
+        padding: 1rem; /* Sesuaikan padding */
+    }
+
+    footer {
+        grid-area: footer; /* Footer mengambil area footer */
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 1rem; /* Pastikan padding tidak berlebihan */
+        background-color: #f1f1f1;
+        margin: 0; /* Pastikan tidak ada margin yang berlebihan */
+    }
+
+    footer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+}

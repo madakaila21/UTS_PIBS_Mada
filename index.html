@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MADA'S WEB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">  
+            <div class="image-display">
+                <img id="profile-image" src="tentang pembuat.jpeg" alt="Profil Mahasiswa" />
+            </div>
+            <h1>Profil Mahasiswa</h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showContent('biodata')">Biodata</a></li>
+            <li><a href="#" onclick="showContent('pendidikan')">Pendidikan</a></li>
+            <li><a href="#" onclick="showContent('pengalaman')">Pengalaman</a></li>
+            <li><a href="#" onclick="showContent('keahlian')">Keahlian</a></li>
+            <li><a href="#" onclick="showContent('publikasi')">Publikasi</a></li>
+        </ul>
+    </nav>
+
+    <section id="content">
+        <!-- Konten dinamis akan tampil di sini -->
+        <div id="biodata" class="content-item">
+            <h2>Biodata</h2>
+            <p>NIM: 2023081010</p>
+            <p>Nama: Mada Kaila Mulya</p>
+            <p>Agama: Islam</p>
+            <p>Tanggal Lahir: 21 Agustus 2005</p>
+            <p>Tempat Lahir: Kota Tangerang</p>
+        </div>
+        <div id="pendidikan" class="content-item" style="display:none;">
+            <h2>Pendidikan</h2>
+            <p>2017-2020 SMPI Al-Hasanah</p>
+            <p>2020-2023 SMAS Budi Luhur</p>
+            <p>2023-2027 Universitas Pembangunan Jaya</p>
+        </div>
+        <div id="pengalaman" class="content-item" style="display:none;">
+            <h2>Pengalaman</h2>
+            <p>Sekretaris     - HIMASIF         - 2024</p>
+            <p>Wakil Ketua    - UKM Bulutangkis - 2024</p>
+            <p>Divisi Kominfo - DAKAURI         - 2023/2024</p>
+        </div>
+        <div id="keahlian" class="content-item" style="display:none;">
+            <h2>Keahlian</h2>
+            <p>Soft Skill :</p>
+            <p>1. Public Speaking</p>
+            <p>Hard Skill :</p>
+            <p>1. Microsoft</p>
+            <p>2. Kesekretariatan</p>
+        </div>
+        <div id="publikasi" class="content-item" style="display:none;">
+            <h2>Publikasi</h2>
+            <p>Repository : github</p>
+        </div>
+    </section>
+
+    <aside>
+        <h2>Hobi</h2>
+        <ul>
+            <li>Bulutangkis</li>
+            <li>Baca Novel</li>
+        </ul>
+    </aside>
+
+    <footer>
+        <div class="social-media">
+            <p>Twitter: @madakailaaa</p>
+            <p>Facebook: madakaila21</p>
+            <p>Instagram: @madakailaaa</p>
+        </div>
+        <ul>
+            <li><p>Copyright 2024. All Rights Reserved</p></li>
+        </ul>
+        <div>
+            <h2>MADA'S WEB</h2>
+            <p>Web Untuk Profil Mahasiswa</p>
+        </div>
+    </footer>
+
+    <script>
+        function showContent(section) {
+            var contents = document.querySelectorAll('.content-item');
+            contents.forEach(function(content) {
+                content.style.display = 'none';
+            });
+            document.getElementById(section).style.display = 'block';
+        }
+    </script>
+    
+</body>
+</html>
